@@ -35,11 +35,13 @@ AM_INIT_AUTOMAKE
 AX_PREFIX_CONFIG_H(include/zrtp_config_unix.h,ZRTP,config/config.h)
 
 CFLAGS="$CFLAGS -std=c99 -O2 -g3 -Wall -Wextra -Wno-unused-parameter -fno-strict-aliasing -fPIC -DZRTP_AUTOMAKE=1"
+LDFLAGS="$LDFLAGS -lm -lz"
+PREFIX="/usr/local"
 
 # Configuring external libraries
 echo "========================= configuring bnlib =============================="
 cd third_party/bnlib
-./configure CFLAGS="$CFLAGS"
+./configure CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" PREFIX="$PREFIX"
 cd ../..
 echo "================================ done  ==================================="
 
