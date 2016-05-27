@@ -12,9 +12,10 @@
 CC=@CC@
 # for libzrtp support
 CFLAGS=@CFLAGS@ @CPPFLAGS@ @WARN@ @TUNE@ @DEFS@ $(DEFINE) -I../../include -I../../include/enterprise -I../../projects/gnu/config -I../../third_party/bgaes
+LFLAGS=@LFLAGS@
 srcdir=@srcdir@
 VPATH=@srcdir@
-PREFIX ?= /usr/local
+PREFIX=@PREFIX@
 
 # Extra object files (e.g. lbnalpha.o for Alpha assembly routines)
 AUXOBJS=
